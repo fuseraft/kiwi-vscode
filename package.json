@@ -4,7 +4,7 @@
   "description": "Syntax highlighting for the Kiwi Programming Language",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.87.0"
+    "vscode": "^1.86.0"
   },
   "categories": [
     "Programming Languages"
