@@ -6,6 +6,9 @@
 			"include": "#comments"
 		},
 		{
+			"include": "#strings"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -30,6 +33,32 @@
 						{
 							"name": "punctuation.definition.comment.kiwi",
 							"match": "(?<=##).*"
+						}
+					]
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.kiwi",
+					"begin": "\"",
+					"end": "\"",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.kiwi"
+						},
+						"1": {
+							"name": "punctuation.definition.string.end.kiwi"
+						},
+						"2": {
+							"name": "string.quoted.double.kiwi"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.kiwi",
+							"match": "\\\\(?:[nrt\"\\\\]|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
 						}
 					]
 				}
