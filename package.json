@@ -1,0 +1,25 @@
+{
+  "name": "kiwi-lang",
+  "displayName": "kiwi-lang",
+  "description": "Syntax highlighting for the Kiwi Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "kiwi",
+      "aliases": ["Kiwi", "kiwi"],
+      "extensions": [".kiwi"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "kiwi",
+      "scopeName": "source.kiwi",
+      "path": "./syntaxes/kiwi.tmLanguage.json"
+    }]
+  }
+}

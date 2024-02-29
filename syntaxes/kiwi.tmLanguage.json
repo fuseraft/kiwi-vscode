@@ -1,0 +1,124 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Kiwi",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#value"
+		},
+		{
+			"begin": "\\{",
+			"end": "\\}",
+			"name": "meta.hash.kiwi",
+			"patterns": [
+				{
+					"include": "#hash_key"
+				},
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#hash"
+				},
+				{
+					"include": "#list"
+				}
+			]
+		},
+		{
+			"begin": "\\[",
+			"end": "\\]",
+			"name": "meta.list.kiwi",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#list"
+				},
+				{
+					"include": "#hash"
+				}
+			]
+		},
+		{
+			"id": "hash_key",
+			"name": "string.unquoted.key.kiwi",
+			"match": "\"[^\"]*\"(?=\\s*:)"
+		},
+		{
+			"id": "value",
+			"patterns": [
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#boolean"
+				},
+				{
+					"include": "#list"
+				},
+				{
+					"include": "#hash"
+				}
+			]
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.kiwi",
+					"match": "\\b(if|elsif|else|import|print|println|delete|module|class|abstract|private|static|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
+				},
+				{
+					"name": "variable.other.kiwi",
+					"match": "\\@[a-zA-Z_][a-zA-Z0-9_]*"
+				},
+				{
+					"name": "storage.type.kiwi",
+					"match": "\\b(Integer|Double|Boolean|String|List|Hash|Object|Lambda)\\b"
+				}
+			]
+		},
+		"string": {
+			"name": "string.quoted.double.kiwi",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kiwi",
+					"match": "\\\\."
+				}
+			]
+		},
+		"list": {
+			"patterns": [
+				{
+					"include": "#list"
+				}
+			]
+		},
+		"hash": {
+			"patterns": [
+				{
+					"include": "#hash"
+				}
+			]
+		},
+		"number": {
+			"name": "constant.numeric.kiwi",
+			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+		},
+		"boolean": {
+			"name": "constant.language.boolean.kiwi",
+			"match": "\\b(true|false)\\b"
+		}
+	},
+	"scopeName": "source.kiwi"
+}
