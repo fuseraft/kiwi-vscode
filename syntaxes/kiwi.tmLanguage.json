@@ -74,7 +74,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(if|elsif|else|import|print|println|delete|module|class|abstract|private|static|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
+					"match": "\\b(if|elsif|else|import|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
 					"name": "variable.other.kiwi",
