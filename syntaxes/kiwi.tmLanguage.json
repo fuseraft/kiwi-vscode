@@ -3,73 +3,38 @@
 	"name": "Kiwi",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
-			"include": "#value"
+			"include": "#number"
 		},
 		{
-			"begin": "\\{",
-			"end": "\\}",
-			"name": "meta.hash.kiwi",
-			"patterns": [
-				{
-					"include": "#hash_key"
-				},
-				{
-					"include": "#value"
-				},
-				{
-					"include": "#hash"
-				},
-				{
-					"include": "#list"
-				}
-			]
-		},
-		{
-			"begin": "\\[",
-			"end": "\\]",
-			"name": "meta.list.kiwi",
-			"patterns": [
-				{
-					"include": "#value"
-				},
-				{
-					"include": "#list"
-				},
-				{
-					"include": "#hash"
-				}
-			]
-		},
-		{
-			"id": "hash_key",
-			"name": "string.unquoted.key.kiwi",
-			"match": "\"[^\"]*\"(?=\\s*:)"
-		},
-		{
-			"id": "value",
-			"patterns": [
-				{
-					"include": "#string"
-				},
-				{
-					"include": "#number"
-				},
-				{
-					"include": "#boolean"
-				},
-				{
-					"include": "#list"
-				},
-				{
-					"include": "#hash"
-				}
-			]
+			"include": "#boolean"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.kiwi",
+					"match": "#.*"
+				},
+				{
+					"name": "comment.block.double-number-sign.kiwi",
+					"begin": "##",
+					"end": "##",
+					"patterns": [
+						{
+							"name": "punctuation.definition.comment.kiwi",
+							"match": "(?<=##).*"
+						}
+					]
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
@@ -83,31 +48,6 @@
 				{
 					"name": "storage.type.kiwi",
 					"match": "\\b(Integer|Double|Boolean|String|List|Hash|Object|Lambda)\\b"
-				}
-			]
-		},
-		"string": {
-			"name": "string.quoted.double.kiwi",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.kiwi",
-					"match": "\\\\."
-				}
-			]
-		},
-		"list": {
-			"patterns": [
-				{
-					"include": "#list"
-				}
-			]
-		},
-		"hash": {
-			"patterns": [
-				{
-					"include": "#hash"
 				}
 			]
 		},
