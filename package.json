@@ -2,7 +2,7 @@
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
   "description": "Syntax highlighting for the Kiwi Programming Language",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "fuseraft",
   "icon": "icon.png",
   "engines": {
@@ -18,8 +18,8 @@
   "contributes": {
     "languages": [{
       "id": "kiwi",
-      "aliases": ["Kiwi", "kiwi"],
-      "extensions": [".kiwi"],
+      "aliases": ["Kiwi", "kiwi", "kiwi-lang", "kiwi-language"],
+      "extensions": [".kiwi", ".🥝"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
