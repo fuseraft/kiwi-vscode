@@ -13,9 +13,6 @@
 		},
 		{
 			"include": "#number"
-		},
-		{
-			"include": "#boolean"
 		}
 	],
 	"repository": {
@@ -28,11 +25,21 @@
 				{
 					"name": "comment.block.double-number-sign.kiwi",
 					"begin": "##",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.kiwi"
+						}
+					},
 					"end": "##",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.kiwi"
+						}
+					},
 					"patterns": [
 						{
-							"name": "punctuation.definition.comment.kiwi",
-							"match": "(?<=##).*"
+							"match": ".+?",
+							"name": "comment.content.kiwi"
 						}
 					]
 				}
@@ -71,8 +78,12 @@
 					"match": "\\b(if|elsif|else|exit|export|import|as|pass|this|new|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
+					"name": "constant.language.boolean.kiwi",
+					"match": "\\b(true|false)\\b"
+				},
+				{
 					"name": "variable.other.kiwi",
-					"match": "\\@[a-zA-Z_][a-zA-Z0-9_]*"
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
 				},
 				{
 					"name": "storage.type.kiwi",
@@ -83,10 +94,6 @@
 		"number": {
 			"name": "constant.numeric.kiwi",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
-		},
-		"boolean": {
-			"name": "constant.language.boolean.kiwi",
-			"match": "\\b(true|false)\\b"
 		}
 	},
 	"scopeName": "source.kiwi"
