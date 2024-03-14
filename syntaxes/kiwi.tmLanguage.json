@@ -75,7 +75,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(if|elsif|else|exit|export|import|as|pass|this|new|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
+					"match": "\\b(if|elsif|else|exit|export|import|as|async|await|then|pass|this|new|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
