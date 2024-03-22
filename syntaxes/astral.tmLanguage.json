@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Kiwi",
+	"name": "Astral",
 	"patterns": [
 		{
 			"include": "#comments"
@@ -19,27 +19,27 @@
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.number-sign.kiwi",
+					"name": "comment.line.number-sign.astral",
 					"match": "#.*"
 				},
 				{
-					"name": "comment.block.double-number-sign.kiwi",
+					"name": "comment.block.double-number-sign.astral",
 					"begin": "##",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.comment.begin.kiwi"
+							"name": "punctuation.definition.comment.begin.astral"
 						}
 					},
 					"end": "##",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.comment.end.kiwi"
+							"name": "punctuation.definition.comment.end.astral"
 						}
 					},
 					"patterns": [
 						{
 							"match": ".+?",
-							"name": "comment.content.kiwi"
+							"name": "comment.content.astral"
 						}
 					]
 				}
@@ -48,23 +48,23 @@
 		"strings": {
 			"patterns": [
 				{
-					"name": "string.quoted.double.kiwi",
+					"name": "string.quoted.double.astral",
 					"begin": "\"",
 					"end": "\"",
 					"captures": {
 						"0": {
-							"name": "punctuation.definition.string.begin.kiwi"
+							"name": "punctuation.definition.string.begin.astral"
 						},
 						"1": {
-							"name": "punctuation.definition.string.end.kiwi"
+							"name": "punctuation.definition.string.end.astral"
 						},
 						"2": {
-							"name": "string.quoted.double.kiwi"
+							"name": "string.quoted.double.astral"
 						}
 					},
 					"patterns": [
 						{
-							"name": "constant.character.escape.kiwi",
+							"name": "constant.character.escape.astral",
 							"match": "\\\\(?:[nrt\"\\\\]|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
 						}
 					]
@@ -74,27 +74,27 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.kiwi",
+					"name": "keyword.control.astral",
 					"match": "\\b(if|elsif|else|exit|export|import|as|async|await|then|pass|this|new|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
-					"name": "constant.language.boolean.kiwi",
+					"name": "constant.language.boolean.astral",
 					"match": "\\b(true|false)\\b"
 				},
 				{
-					"name": "variable.other.kiwi",
+					"name": "variable.other.astral",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
 				},
 				{
-					"name": "storage.type.kiwi",
+					"name": "storage.type.astral",
 					"match": "\\b(Integer|Double|Boolean|String|List|Hash|Object|Lambda)\\b"
 				}
 			]
 		},
 		"number": {
-			"name": "constant.numeric.kiwi",
+			"name": "constant.numeric.astral",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
-		}
+		}	
 	},
-	"scopeName": "source.kiwi"
+	"scopeName": "source.astral"
 }
