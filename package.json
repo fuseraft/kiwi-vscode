@@ -2,7 +2,7 @@
   "name": "astral-lang",
   "displayName": "astral-lang",
   "description": "Syntax highlighting for the Astral Programming Language",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "publisher": "fuseraft",
   "icon": "icon.png",
   "engines": {
@@ -15,10 +15,6 @@
     "type": "git",
     "url": "https://github.com/fuseraft/astral-vscode.git"
   },
-  "main": "./extension.js",
-  "activationEvents": [
-    "onLanguage:astral"
-  ],
   "contributes": {
     "languages": [{
       "id": "astral",
