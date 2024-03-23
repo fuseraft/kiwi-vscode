@@ -11,9 +11,15 @@
 		{
 			"include": "#keywords"
 		},
+        {
+            "include": "#builtin-methods"
+        },
 		{
 			"include": "#number"
-		}
+		},
+        {
+            "include": "#operators"
+        }
 	],
 	"repository": {
 		"comments": {
@@ -24,13 +30,13 @@
 				},
 				{
 					"name": "comment.block.double-number-sign.astral",
-					"begin": "##",
+					"begin": "/#",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.definition.comment.begin.astral"
 						}
 					},
-					"end": "##",
+					"end": "#/",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.definition.comment.end.astral"
@@ -75,7 +81,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.astral",
-					"match": "\\b(if|elsif|else|exit|export|import|as|async|await|then|pass|this|new|print|println|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
+					"match": "\\b(if|elsif|else|switch|case|default|exit|export|import|as|async|await|then|pass|this|new|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
 					"name": "constant.language.boolean.astral",
@@ -91,10 +97,26 @@
 				}
 			]
 		},
+		"builtin-methods": {
+            "patterns": [
+                {
+                    "name": "keyword.function.astral",
+                    "match": "\\b(print|println|input|__appendtext__|__copyfile__|__copyr__|__combine__|__createfile__|__deletefile__|__movefile__|__readfile__|__readlines__|__writeline__|__writetext__|__isfile__|__fileext__|__filename__|__filesize__|__filepath__|__fileabspath__|__fileattrs__|__glob__|__listdir__|__mkdir__|__mkdirp__|__rmdir__|__rmdirf__|__isdir__|__chdir__|__cwd__|__tmpdir__|__home__|__hour__|__min__|__sec__|__mday__|__wday__|__yday__|__mon__|__year__|__epochms__|__delay__|__isdst__|__ticks__|__ticksms__|__ampm__|__sin__|__tan__|__asin__|__acos__|__atan__|__atan2__|__sinh__|__cosh__|__tanh__|__cos__|__log__|__log2__|__log10__|__log1p__|__fmod__|__hypot__|__isfinite__|__isinf__|__isnan__|__isnormal__|__sqrt__|__cbrt__|__abs__|__floor__|__ceil__|__round__|__trunc__|__remainder__|__exp__|__expm1__|__erf__|__erfc__|__lgamma__|__tgamma__|__fmax__|__fmin__|__fdim__|__copysign__|__nextafter__|__pow__|__eps__|__random__|__divisors__|__listprimes__|__nthprime__|map|none|reduce|select|sort|sum|min|max|to_h|__getenv__|__setenv__|__euid__|__exec__|__execout__|input|silent|chars|is_a|join|split|ltrim|rtrim|trim|size|to_d|to_i|to_s|type|empty|replace|reverse|contains|begins_with|ends_with|index|lastindex|upcase|downcase|keys)\\b"
+                }
+            ]
+        },
 		"number": {
 			"name": "constant.numeric.astral",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
-		}	
+		},
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.astral",
+                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|&|\\||\\^|~|<<|>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
+                }
+            ]
+        }
 	},
 	"scopeName": "source.astral"
 }

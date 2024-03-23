@@ -7,10 +7,10 @@ def sieve_of_eratosthenes(limit)
   isPrime[0] = false
   isPrime[1] = false
 
-  ##
+  /#
   this is a test.
   The value is true. Don't do this.
-  ##
+  #/
 
   p = 2
 

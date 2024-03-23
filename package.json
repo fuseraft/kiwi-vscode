@@ -2,9 +2,9 @@
   "name": "astral-lang",
   "displayName": "astral-lang",
   "description": "Syntax highlighting for the Astral Programming Language",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "publisher": "fuseraft",
-  "icon": "icon.png",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.86.0"
   },
