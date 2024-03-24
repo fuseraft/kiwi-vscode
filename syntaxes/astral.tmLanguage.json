@@ -17,6 +17,9 @@
 		{
 			"include": "#number"
 		},
+		{
+			"include": "#hexadecimal"
+		},
         {
             "include": "#operators"
         }
@@ -109,6 +112,10 @@
 			"name": "constant.numeric.astral",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
 		},
+		"hexadecimal": {
+			"name": "constant.numeric.hexadecimal.astral",
+			"match": "\\b0x[0-9a-fA-F]+\\b"
+		},		
         "operators": {
             "patterns": [
                 {
