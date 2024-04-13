@@ -1,0 +1,124 @@
+{
+    "Class Definition": {
+        "prefix": "class",
+        "body": [
+            "class $1",
+            "  def initialize()",
+            "    @$2 = $3",
+            "  end",
+            "  ",
+            "  def $4($5)",
+            "    $6",
+            "  end",
+            "  ",
+            "  def $7()",
+            "    return @$2",
+            "  end",
+            "end"
+        ],
+        "description": "Defines a new class with initial methods"
+    },
+    "Main Function": {
+        "prefix": "main",
+        "body": [
+            "def main()",
+            "  $1",
+            "end",
+            "",
+            "main()"
+        ],
+        "description": "Defines the main function and calls it"
+    },
+    "Function Definition": {
+        "prefix": "def",
+        "body": [
+            "def $1()",
+            "  $2",
+            "end"
+        ],
+        "description": "Creates a new function definition"
+    },
+    "Module Definition": {
+        "prefix": "module",
+        "body": [
+            "module $1",
+            "  $0",
+            "end"
+        ],
+        "description": "Defines a new module"
+    },
+    "Import Module": {
+        "prefix": "import",
+        "body": [
+            "import \"@$1\" as $2"
+        ],
+        "description": "Imports a module and assigns it an alias"
+    },
+    "Try-Catch Block": {
+        "prefix": "trycatch",
+        "body": [
+            "try",
+            "  $1",
+            "catch ($2)",
+            "  $3",
+            "end"
+        ],
+        "description": "Creates a try-catch block for error handling"
+    },
+    "For Loop": {
+        "prefix": "forloop",
+        "body": [
+            "for $1 in $2 do",
+            "  $3",
+            "end"
+        ],
+        "description": "Creates a for loop that iterates over a range or collection"
+    },
+    "While Loop": {
+        "prefix": "whileloop",
+        "body": [
+            "while $1 do",
+            "  $2",
+            "end"
+        ],
+        "description": "Creates a for loop that iterates over a range or collection"
+    },
+    "Lambda Block": {
+        "prefix": "with",
+        "body": [
+            "with ($1) do",
+            "  $2",
+            "end"
+        ],
+        "description": "Creates a for loop that iterates over a range or collection"
+    },
+    "Conditional Block": {
+        "prefix": "if",
+        "body": [
+            "if $1",
+            "  $0",
+            "end"
+        ],
+        "description": "Creates an if statement"
+    },
+    "If-Else Block": {
+        "prefix": "ifelse",
+        "body": [
+            "if $1",
+            "  $2",
+            "else",
+            "  $3",
+            "end"
+        ],
+        "description": "Creates an if-else statement"
+    },
+    "Do Block": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "  $0",
+            "end"
+        ],
+        "description": "Creates a do block"
+    }
+}

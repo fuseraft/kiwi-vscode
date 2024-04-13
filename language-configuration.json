@@ -1,7 +1,7 @@
 {
     "comments": {
         "lineComment": "#",
-        "blockComment": ["##", "##"]
+        "blockComment": ["/#", "#/"]
     },
     "brackets": [
         ["{", "}"],
@@ -19,8 +19,7 @@
         { "open": "{", "close": "}" },
         { "open": "[", "close": "]" },
         { "open": "(", "close": ")" },
-        { "open": "\"", "close": "\"" },
-        { "open": "'", "close": "'" }
+        { "open": "\"", "close": "\"" }
     ],
     "folding": {
         "markers": {
