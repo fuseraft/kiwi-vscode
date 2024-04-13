@@ -18,6 +18,12 @@
 			"include": "#number"
 		},
 		{
+			"include": "#octal"
+		},
+		{
+			"include": "#binary"
+		},
+		{
 			"include": "#hexadecimal"
 		},
         {
@@ -83,8 +89,16 @@
 		"keywords": {
 			"patterns": [
 				{
+					"name": "keyword.special.this.astral",
+					"match": "(?<=\\s|^)@(?=\\s|$)"
+				},
+				{
+					"name": "variable.instance.astral",
+					"match": "@[a-zA-Z_][a-zA-Z0-9_]*"
+				},
+				{
 					"name": "keyword.control.astral",
-					"match": "\\b(if|elsif|else|switch|case|default|exit|export|import|as|async|await|then|pass|this|new|delete|module|class|abstract|private|static|override|def|lambda|try|catch|do|end|in|while|for|return|break|next)\\b"
+					"match": "\\b(if|elsif|else|switch|case|default|exit|export|import|as|async|await|then|pass|new|delete|module|class|abstract|private|static|override|def|with|try|catch|do|end|in|while|for|return|break|next)\\b"
 				},
 				{
 					"name": "constant.language.boolean.astral",
@@ -112,10 +126,18 @@
 			"name": "constant.numeric.astral",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
 		},
+        "octal": {
+            "name": "constant.numeric.octal.astral",
+            "match": "\\b0o[0-7]+\\b"
+        },
+        "binary": {
+            "name": "constant.numeric.binary.astral",
+            "match": "\\b0b[01]+\\b"
+        },
 		"hexadecimal": {
 			"name": "constant.numeric.hexadecimal.astral",
 			"match": "\\b0x[0-9a-fA-F]+\\b"
-		},		
+		},
         "operators": {
             "patterns": [
                 {
