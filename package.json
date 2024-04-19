@@ -26,8 +26,8 @@
           "astral-language"
         ],
         "extensions": [
-          ".astral",
-          ".🚀"
+          ".star",
+          ".⭐"
         ],
         "configuration": "./language-configuration.json"
       }
