@@ -1,10 +1,10 @@
-# Astral Language Support for Visual Studio Code
+# Kiwi Language Support for Visual Studio Code
 
-This extension provides language support for [The Astral Programming Language](https://www.github.com/fuseraft/astral). ⭐
+This extension provides language support for [The Kiwi Programming Language](https://www.github.com/fuseraft/kiwi). 🥝
 
 ## Features
 
-Syntax highlighting for Astral files.
+Syntax highlighting and code snippets for Kiwi.
 
 ## Installation
 
@@ -12,13 +12,13 @@ This extension can be installed from the Visual Studio Code Marketplace or by im
 
 ## Usage
 
-Simply open your Astral files with a `.⭐` or `.star` extension, and the extension will automatically provide syntax highlighting.
+Simply open your Kiwi files with a `.🥝` or `.ki` extension, and the extension will automatically provide syntax highlighting.
 
 ## Contributing
 
-Contributions to the Astral language extension are welcome.
+Contributions are welcome!
 
-Let's build something amazing! ⭐
+Let's build something amazing! 🥝
 
 ## License
 

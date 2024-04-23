@@ -1,8 +1,8 @@
 {
-  "name": "astral-lang",
-  "displayName": "astral-lang",
-  "description": "Syntax highlighting for the Astral Programming Language",
-  "version": "0.0.14",
+  "name": "kiwi-lang",
+  "displayName": "kiwi-lang",
+  "description": "Syntax highlighting for Kiwi",
+  "version": "0.0.9",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {
@@ -13,36 +13,36 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuseraft/astral-vscode.git"
+    "url": "https://github.com/fuseraft/kiwi-vscode.git"
   },
   "contributes": {
     "languages": [
       {
-        "id": "astral",
+        "id": "kiwi",
         "aliases": [
-          "Astral",
-          "astral",
-          "astral-lang",
-          "astral-language"
+          "Kiwi",
+          "kiwi",
+          "kiwi-lang",
+          "kiwi-language"
         ],
         "extensions": [
-          ".star",
-          ".⭐"
+          ".ki",
+          ".🥝"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "astral",
-        "scopeName": "source.astral",
-        "path": "./syntaxes/astral.tmLanguage.json"
+        "language": "kiwi",
+        "scopeName": "source.kiwi",
+        "path": "./syntaxes/kiwi.tmLanguage.json"
       }
     ],
     "snippets": [
       {
-        "language": "astral",
-        "path": "./snippets/astral-snippets.json"
+        "language": "kiwi",
+        "path": "./snippets/kiwi-snippets.json"
       }
     ]
   }
