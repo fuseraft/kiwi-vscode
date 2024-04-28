@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|do|else|elsif|end|export|false|for|go|if|import|in|input|module|new|next|override|parse|pass|print|println|private|return|static|then|this|throw|true|try|while|with)\\b"
+					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|do|else|elsif|end|export|false|for|fn|go|if|import|in|input|module|new|next|override|parse|pass|print|println|private|return|static|then|this|throw|true|try|when|while|with)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
