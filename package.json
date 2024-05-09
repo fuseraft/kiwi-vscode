@@ -2,7 +2,7 @@
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
   "description": "Syntax highlighting for Kiwi",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {
@@ -26,7 +26,7 @@
           "kiwi-language"
         ],
         "extensions": [
-          ".ki",
+          ".kiwi",
           ".🥝"
         ],
         "configuration": "./language-configuration.json"
