@@ -12,7 +12,7 @@ This extension can be installed from the Visual Studio Code Marketplace or by im
 
 ## Usage
 
-Simply open your Kiwi files with a `.🥝` or `.ki` extension, and the extension will automatically provide syntax highlighting.
+Simply open your Kiwi files with a `.🥝` or `.kiwi` extension, and the extension will automatically provide syntax highlighting.
 
 ## Contributing
 
