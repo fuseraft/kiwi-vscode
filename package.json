@@ -2,7 +2,7 @@
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
   "description": "Syntax highlighting for Kiwi",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {
