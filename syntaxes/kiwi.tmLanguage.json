@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|do|else|elsif|end|export|false|for|fn|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|return|static|then|this|throw|true|try|when|while|with)\\b"
+					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|return|static|then|this|throw|true|try|when|while|with)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -122,7 +122,7 @@
             "patterns": [
                 {
                     "name": "keyword.function.kiwi",
-                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|downcase|each|empty|ends_with|enqueue|find|flatten|has_key|index|index|insert|is_a|join|keys|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|pop|pretty|push|reduce|remove|remove_at|replace|reverse|rotate|rtrim|scan|select|serialize|shift|size|slice|sort|split|substring|sum|to_bytes|to_double|to_hash|to_hex|to_int|to_string|trim|type|unique|unshift|upcase|values|zip)\\b"
+                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|pop|pretty|push|reduce|remove|remove_at|replace|reverse|rotate|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|to_bytes|to_double|to_hash|to_hex|to_int|to_string|trim|truthy|type|unique|unshift|uppercase|values|zip)\\b"
 				}
             ]
         },
