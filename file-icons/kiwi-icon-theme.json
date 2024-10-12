@@ -1,0 +1,14 @@
+{
+    "iconDefinitions": {
+      "file-icon-kiwi": {
+        "iconPath": "./images/file_type_kiwi.svg"
+      }
+    },
+    "fileExtensions": {
+      "kiwi": "file-icon-kiwi"
+    },
+    "languageIds": {
+      "kiwi": "file-icon-kiwi"
+    }
+  }
+  

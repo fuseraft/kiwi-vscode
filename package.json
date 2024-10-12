@@ -2,7 +2,7 @@
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
   "description": "Syntax highlighting for Kiwi",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {
@@ -43,6 +43,13 @@
       {
         "language": "kiwi",
         "path": "./snippets/kiwi-snippets.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "kiwi-icon-theme",
+        "label": "Kiwi Icon Theme",
+        "path": "./file-icons/kiwi-icon-theme.json"
       }
     ]
   }

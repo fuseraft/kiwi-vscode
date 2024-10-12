@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|repeat|return|static|then|this|throw|true|try|when|while|with)\\b"
+					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|deserialize|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|repeat|return|serialize|static|then|this|throw|true|try|when|while|with)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(Integer|Double|Boolean|String|List|Hash|Object|Lambda)\\b"
+					"match": "\\b(Integer|Float|None|Boolean|String|List|Hash|Object|Lambda)\\b"
 				}
 			]
 		},
@@ -122,7 +122,7 @@
             "patterns": [
                 {
                     "name": "keyword.function.kiwi",
-                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|pop|pretty|push|reduce|remove|remove_at|replace|reverse|rotate|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|to_bytes|to_double|to_hash|to_hex|to_int|to_string|trim|truthy|type|unique|unshift|uppercase|values|zip)\\b"
+                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|none|pop|pretty|push|reduce|remove|remove_at|rreplace|replace|reverse|rotate|rsplit|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|swap|to_bytes|to_float|to_hash|to_hex|to_int|to_string|tokens|trim|truthy|type|unique|unshift|uppercase|values|zip)\\b"
 				}
             ]
         },

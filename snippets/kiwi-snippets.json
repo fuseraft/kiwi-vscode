@@ -21,7 +21,7 @@
     "Main Function": {
         "prefix": "main",
         "body": [
-            "def main()",
+            "fn main()",
             "  $1",
             "end",
             "",
@@ -30,22 +30,22 @@
         "description": "Defines the main function and calls it"
     },
     "Function Definition": {
-        "prefix": "def",
+        "prefix": "fn",
         "body": [
-            "def $1()",
+            "fn $1()",
             "  $2",
             "end"
         ],
         "description": "Creates a new function definition"
     },
     "Module Definition": {
-        "prefix": "module",
+        "prefix": "package",
         "body": [
-            "module $1",
+            "package $1",
             "  $0",
             "end"
         ],
-        "description": "Defines a new module"
+        "description": "Defines a new package"
     },
     "Import Module": {
         "prefix": "import",
