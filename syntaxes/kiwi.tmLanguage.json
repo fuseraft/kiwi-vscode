@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|async|await|break|catch|class|def|delete|deserialize|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|repeat|return|serialize|static|then|this|throw|true|try|when|while|with)\\b"
+					"match": "\\b(abstract|as|break|catch|class|def|delete|deserialize|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|repeat|return|serialize|spawn|static|this|throw|true|try|when|while|with)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(Integer|Float|None|Boolean|String|List|Hash|Object|Lambda)\\b"
+					"match": "\\b(Integer|Float|None|Boolean|String|List|Hash|Object|Lambda|Any|integer|float|none|boolean|string|list|hash|object|lambda|any)\\b"
 				}
 			]
 		},
@@ -146,7 +146,7 @@
             "patterns": [
                 {
                     "name": "keyword.operator.kiwi",
-                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|&|\\||\\^|~|<<|>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
+                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
                 }
             ]
         }
