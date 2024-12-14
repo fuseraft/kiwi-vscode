@@ -16,7 +16,7 @@ fn sqrt(x)
   while true do
     nextZ = z - (z * z - x) / (2 * z)
     break when math::abs(z - nextZ) < tolerance
-    z = nextZ    
+    z = nextZ
   end
 
   return z

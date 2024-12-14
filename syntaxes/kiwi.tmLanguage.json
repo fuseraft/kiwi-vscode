@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(Integer|Float|None|Boolean|String|List|Hash|Object|Lambda|Pointer|Any|integer|float|none|boolean|string|list|hash|object|lambda|pointer|any)\\b"
+					"match": "\\b(Integer|Float|None|Boolean|String|List|Hashmap|Object|Lambda|Pointer|Any|integer|float|none|boolean|string|list|hashmap|object|lambda|pointer|any)\\b"
 				}
 			]
 		},
