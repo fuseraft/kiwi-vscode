@@ -16,7 +16,7 @@
             "  end",
             "end"
         ],
-        "description": "Defines a new strunct with initial methods"
+        "description": "Defines a new strunct with initial methods."
     },
     "Main Function": {
         "prefix": "main",
@@ -27,7 +27,7 @@
             "",
             "main()"
         ],
-        "description": "Defines the main function and calls it"
+        "description": "Defines the main function and calls it."
     },
     "Function Definition": {
         "prefix": "fn",
@@ -36,7 +36,7 @@
             "  $2",
             "end"
         ],
-        "description": "Creates a new function definition"
+        "description": "Creates a new function definition."
     },
     "Module Definition": {
         "prefix": "package",
@@ -45,14 +45,14 @@
             "  $0",
             "end"
         ],
-        "description": "Defines a new package"
+        "description": "Defines a new package."
     },
     "Import Module": {
         "prefix": "import",
         "body": [
             "import \"@$1\" as $2"
         ],
-        "description": "Imports a module and assigns it an alias"
+        "description": "Imports a module and assigns it an alias."
     },
     "Try-Catch Block": {
         "prefix": "trycatch",
@@ -63,7 +63,20 @@
             "  $3",
             "end"
         ],
-        "description": "Creates a try-catch block for error handling"
+        "description": "Creates a try-catch block for error handling."
+    },
+    "Try-Catch-Finally Block": {
+        "prefix": "trycatchfinally",
+        "body": [
+            "try",
+            "  $1",
+            "catch ($2)",
+            "  $3",
+            "finally",
+            "  $4",
+            "end"
+        ],
+        "description": "Creates a try-catch-finally block for error handling."
     },
     "For Loop": {
         "prefix": "forloop",
@@ -72,7 +85,7 @@
             "  $3",
             "end"
         ],
-        "description": "Creates a for loop that iterates over a range or collection"
+        "description": "Creates a for loop that iterates over a range or collection."
     },
     "While Loop": {
         "prefix": "whileloop",
@@ -81,7 +94,16 @@
             "  $2",
             "end"
         ],
-        "description": "Creates a for loop that iterates over a range or collection"
+        "description": "Creates a while loop that runs while a condition is truthy."
+    },
+    "Repeat Loop": {
+        "prefix": "repeatloop",
+        "body": [
+            "repeat $1 as $2 do",
+            "  $3",
+            "end"
+        ],
+        "description": "Creates a repeat loop that iterates n number of times."
     },
     "Lambda Block": {
         "prefix": "with",
@@ -90,7 +112,7 @@
             "  $2",
             "end"
         ],
-        "description": "Creates a for loop that iterates over a range or collection"
+        "description": "Creates a lambda block."
     },
     "Conditional Block": {
         "prefix": "if",
@@ -99,7 +121,7 @@
             "  $0",
             "end"
         ],
-        "description": "Creates an if statement"
+        "description": "Creates an if statement."
     },
     "If-Else Block": {
         "prefix": "ifelse",
@@ -110,7 +132,31 @@
             "  $3",
             "end"
         ],
-        "description": "Creates an if-else statement"
+        "description": "Creates an if-else statement."
+    },
+    "If-Elsif-Else Block": {
+        "prefix": "ifelse",
+        "body": [
+            "if $1",
+            "  $2",
+            "elsif $3",
+            "  $4",
+            "else",
+            "  $5",
+            "end"
+        ],
+        "description": "Creates an if-elsif-else statement."
+    },
+    "Case Block": {
+        "prefix": "case",
+        "body": [
+            "case $1 as $2",
+            "  when $3 $4",
+            "  when $5 $6",
+            "  else $7",
+            "end"
+        ],
+        "description": "Creates a case statement."
     },
     "Do Block": {
         "prefix": "do",
@@ -119,6 +165,6 @@
             "  $0",
             "end"
         ],
-        "description": "Creates a do block"
+        "description": "Creates a do block."
     }
 }
