@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(Integer|Float|None|Boolean|String|List|Hashmap|Object|Lambda|Pointer|Any|integer|float|none|boolean|string|list|hashmap|object|lambda|pointer|any)\\b"
+					"match": "\\b(Integer|Float|None|Date|Boolean|String|List|Hashmap|Object|Lambda|Pointer|Any|integer|float|none|date|boolean|string|list|hashmap|object|lambda|pointer|any)\\b"
 				}
 			]
 		},
@@ -122,7 +122,7 @@
             "patterns": [
                 {
                     "name": "keyword.function.kiwi",
-                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|none|pop|pretty|push|reduce|remove|remove_at|rreplace|replace|reverse|rotate|rsplit|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|swap|to_bytes|to_float|to_hash|to_hex|to_int|to_string|tokens|trim|truthy|type|unique|unshift|uppercase|values|zip)\\b"
+                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|none|pop|pretty|push|reduce|remove|remove_at|rreplace|replace|reverse|rotate|rsplit|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|swap|to_bytes|to_float|to_hash|to_hex|to_integer|to_string|trim|truthy|type|unique|unshift|uppercase|values|zip|hour|minute|second|day|month|year)\\b"
 				}
             ]
         },
