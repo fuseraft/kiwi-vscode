@@ -1,15 +1,15 @@
 {
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
-  "description": "Syntax highlighting for the Kiwi programming language",
-  "version": "0.0.22",
+  "description": "Syntax highlighting for the Hayward and Kiwi programming languages.",
+  "version": "0.1.0",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.86.0"
   },
   "categories": [
-    "Programming Languages", 
+    "Programming Languages",
     "Snippets"
   ],
   "repository": {
@@ -24,10 +24,22 @@
           "Kiwi",
           "kiwi",
           "kiwi-lang",
-          "kiwi-language"
+          "kiwi-language",
+          "Hayward",
+          "hayward",
+          "hayward-lang",
+          "hayward-language"
         ],
         "extensions": [
+          ".hayward",
           ".kiwi",
+          ".hay",
+          ".k",
+          ".min.hayward",
+          ".min.kiwi",
+          ".min.hay",
+          ".min.k",
+          ".min.🥝",
           ".🥝"
         ],
         "configuration": "./language-configuration.json"
