@@ -83,6 +83,28 @@
 							"match": "\\\\(?:[nrt\"\\\\]|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
 						}
 					]
+				},
+				{
+					"name": "string.quoted.single.kiwi",
+					"begin": "'",
+					"end": "'",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.kiwi"
+						},
+						"1": {
+							"name": "punctuation.definition.string.end.kiwi"
+						},
+						"2": {
+							"name": "string.quoted.single.kiwi"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.kiwi",
+							"match": "\\\\(?:[nrt\"\\\\]|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
+						}
+					]
 				}
 			]
 		},
@@ -98,7 +120,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|break|catch|const|def|delete|deserialize|do|else|elsif|end|export|false|finally|for|fn|global|go|if|import|in|input|new|next|override|package|parse|pass|print|println|private|repeat|return|serialize|spawn|static|struct|this|throw|true|try|var|when|while|with)\\b"
+					"match": "\\b(abstract|as|break|catch|const|do|eprint|eprintln|emit|exit|export|finally|for|import|include|in|interface|def|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|when|while)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -114,7 +136,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(Integer|Float|None|Date|Boolean|String|List|Hashmap|Object|Lambda|Pointer|Any|integer|float|none|date|boolean|string|list|hashmap|object|lambda|pointer|any)\\b"
+					"match": "\\b(any|boolean|bytes|date|float|hashmap|integer|lambda|list|none|object|pointer|string)\\b"
 				}
 			]
 		},
@@ -122,7 +144,7 @@
             "patterns": [
                 {
                     "name": "keyword.function.kiwi",
-                    "match": "\\b(begins_with|chars|clear|clone|concat|contains|count|dequeue|deserialize|lowercase|each|empty|ends_with|enqueue|find|first|flatten|get|has_key|index|index|insert|is_a|join|keys|last|lastindex|lastindex|ltrim|map|match|matches|matches_all|max|merge|min|none|pop|pretty|push|reduce|remove|remove_at|rreplace|replace|reverse|rotate|rsplit|rtrim|scan|select|serialize|set|shift|size|slice|sort|split|substring|sum|swap|to_bytes|to_float|to_hash|to_hex|to_integer|to_string|trim|truthy|type|unique|unshift|uppercase|values|zip|hour|minute|second|day|month|year)\\b"
+                    "match": "\\b(append|begins_with|between|chars|chomp|clear|clone|concat|contains|count|day|dequeue|empty|ends_with|enqueue|find|first|flatten|get|has_key|hour|index|insert|is_a|join|keys|last|lastindex|ltrim|lines|lowercase|match|matches|matches_all|members|merge|millisecond|minute|month|pop|pretty|push|remove|remove_at|replace|reverse|rtrim|rotate|rreplace|rsplit|scan|second|set|shift|size|slice|split|substring|swap|to_list|to_bytes|to_date|to_float|to_hex|to_integer|tokens|to_string|trim|truthy|type|unique|unshift|uppercase|values|year|zip)\\b"
 				}
             ]
         },
@@ -146,7 +168,7 @@
             "patterns": [
                 {
                     "name": "keyword.operator.kiwi",
-                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
+                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
                 }
             ]
         }

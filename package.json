@@ -25,19 +25,11 @@
           "kiwi",
           "kiwi-lang",
           "kiwi-language",
-          "Hayward",
-          "hayward",
-          "hayward-lang",
-          "hayward-language"
         ],
         "extensions": [
-          ".hayward",
           ".kiwi",
-          ".hay",
           ".k",
-          ".min.hayward",
           ".min.kiwi",
-          ".min.hay",
           ".min.k",
           ".min.🥝",
           ".🥝"
