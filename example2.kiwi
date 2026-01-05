@@ -1,75 +1,38 @@
-# a script for debugging and experimentation (and fun!)
+channel = task::channel(3)  # small buffer to show backpressure
 
-const PRINT = false
+producer = with (chan: Channel) do
+  for i in [1 to 15] do
+    println "[Producer] -> sending ${i}"
+    chan.send(i)
 
-fn get_calc(): hashmap
-  return {}.set("add", (with (a: float, b: float) do a + b end))
-           .set("sub", (with (a: float, b: float) do a - b end))
-           .set("mul", (with (a: float, b: float) do a * b end))
-           .set("div", (with (a: float, b: float) do a / b end))
-end
-
-fn do_mathy_stuff(calc: hashmap): float
-  var (a: float = 1.0,
-       b: float = 2.0,
-       c: float = 0.0)
-
-  for op in calc do
-    var (func: lambda = calc.get(op))
-    
-    if PRINT
-      println "${op}(${a}, ${b}) = ${func(a, b)}"
+    if i % 4 == 0
+      # slow down sometimes
+      task::sleep(100)
     end
-
-    c += func(a, b)
   end
 
-  return c
+  chan.close()
+  println "[Producer] finished & closed channel"
 end
 
-fn test(): float
-  var (calc: hashmap = get_calc(),
-       sum: float)
-
-  for i in [1..1000] do
-    sum += do_mathy_stuff(calc)
+consumer = with (chan: Channel) do
+  total = 0
+  count = 0
+  while v = chan.recv() do
+    total += v
+    count += 1
+    println "[Consumer] <- received ${v} (avg: ${(total / count)})"
+    task::sleep(150)  # consumer slower -> backpressure
   end
-
-  return sum
+  println "[Consumer] channel closed - processed ${count} messages"
 end
 
-fn benchmark()
-  var (start: float = time::ticks(),
-       _ = test(),
-       stop: float = time::ticks(), 
-       duration: float = time::ticksms(stop - start))
-  
-  if PRINT
-    println "computed in ${duration} milliseconds."
-  end
+# Producer
+task::spawn(producer, [channel])
 
-  return duration
-end
+# Consumer
+task::spawn(consumer, [channel])
 
-fn main(argv)
-  var (num_runs: integer = 5,
-       results: list = [],
-       total_duration: float)
-
-  if !argv.empty() && string::isnumeric(argv.first())
-    num_runs = argv.first().to_integer()
-  end
-
-  for run in std::range(0, num_runs) do
-    var (duration: float = benchmark())
-    results.push(duration)
-    total_duration += duration
-  end
-
-  println "durations: ${results}"
-  println "minimum: ${results.min()}"
-  println "maximum: ${results.max()}"
-  println "average: ${total_duration / results.size()}"
-end
-
-main(argv::get())
+println "Main thread: both tasks running independently - no shared state, no locks"
+task::sleep(3000)
+println "Done!"

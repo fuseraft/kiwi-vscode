@@ -1,28 +1,190 @@
+#!/usr/bin/env kiwi
+
 /#
-@summary Compute the square root of an `Integer` or `Float` value using the Newton-Raphson method.
-@param x The value for which to compute the square root. It must be either an `Integer` or a `Float`.
-@return A `Float` containing the square root of `x`.
-@throws "Not a number" if `x` is not an `Integer` or `Float`.
+This is a fuzzer implementation in Kiwi.
+
+Link to repo: https://github.com/fuseraft/kiwi-fuzz
 #/
-fn sqrt(x)
-  # guard clause to only accept ints and floats.
-  throw "Not a number" when ![Integer, Float].contains(x.type())
 
-  # the square root and epsilon
-  z = 1.0
-  tolerance = math::eps()
+fn main(args)
+  exit help() when args.empty()
 
-  # Newton-Raphson method to approximate the square root
-  while true do
-    nextZ = z - (z * z - x) / (2 * z)
-    break when math::abs(z - nextZ) < tolerance
-    z = nextZ
+  # Create an unbounded channel for async file I/O
+  io_chan = task::channel()
+
+  try
+    # These options have values associated with them.
+    value_opts = ["f", "d", "r"]
+    cfg = parse_args(args, value_opts)
+    cfg = build_config(cfg)
+
+    if cfg.print_help
+      exit help()
+    end
+
+    if cfg.record_output
+      task::spawn(with (chan: Channel, file_path: string) do
+        offset = fio::exists(file_path) ? fio::filesize(file_path) : 0
+
+        while v = chan.recv() do
+          fio::writeslice(file_path, offset, v)
+          offset += v.size()
+        end
+      end, [io_chan, cfg.output_file])
+    end
+
+    if cfg.replay_output
+      if not fio::exists(cfg.replay_file)
+        throw "Replay file does not exist: ${cfg.replay_file}"
+      end
+
+      # Replaying fuzz from a file
+      task::await(replay_fuzz(cfg, io_chan))
+    else
+      # Generate fuzz indefinitely 
+      while true do
+        task::await(generate_fuzz(cfg, io_chan))
+      end
+    end
+  catch (o_O)
+    eprintln o_O
+  finally
+    io_chan.close()
+  end
+end
+
+fn build_config(cfg: hashmap): hashmap
+  validate_config(cfg)
+
+  alphabet = cfg.has_key("p") 
+    ? [33..126].to_bytes() # Printable ASCII only 
+    : [1..255].to_bytes() # Defaults to all ASCII (excluding null byte)
+
+  # -0 includes the null byte in the alphabet
+  if cfg["0"]
+    alphabet.push(0)
   end
 
-  return z
+  {
+    replay_file: cfg["r"],
+    replay_output: cfg["r"].truthy(), # If replay_file is set, assume it exists
+    output_file: cfg["f"], 
+    record_output: cfg["f"].truthy(),
+    alphabet: alphabet,
+    alphabet_size: alphabet.size(),
+    delay: (cfg["d"] ?? 0).to_integer(),
+    include_newline: cfg["l"] ?? false,
+    print_help: cfg["h"] ?? false
+  }
 end
 
-# Example usage: Compute and print the square root of numbers from 1 to 100
-repeat 100 as n do
-  println "sqrt(${n}) = ${sqrt(n)}"
+fn replay_fuzz(cfg: hashmap, io_chan: Channel): integer
+  task::spawn(with (config: hashmap, chan: Channel) do
+    replay_file = config.replay_file
+    record_output = config.record_output
+    delay = config.delay
+
+    replay_size = fio::filesize(replay_file)
+    chunk_size = 1024
+    pos = 0
+
+    # Read the file in 1024 byte blocks
+    while pos < replay_size do
+      # This is safe, because Kiwi is awesome.
+      chunk = fio::readslice(replay_file, pos, chunk_size)
+
+      for byte in chunk do
+        c = [byte].to_bytes()
+        if record_output
+          chan.send(c)
+        end
+
+        print c.to_string()
+
+        task::sleep(delay)
+      end
+
+      pos += chunk.size()
+    end
+  end, [cfg.clone(), io_chan])
 end
+
+fn generate_fuzz(cfg: hashmap, io_chan: Channel): integer
+  task::spawn(with (config: hashmap, chan: Channel) do
+    alphabet = config.alphabet
+    alphabet_size = config.alphabet_size
+    include_newline = config.include_newline
+    record_output = config.record_output
+    delay = config.delay
+
+    repeat math::random(1, 1024) as i do
+      c = [alphabet[math::random(0, alphabet_size - 1)]].to_bytes()
+
+      if include_newline and math::random(0.0, 1.0) < 0.05
+        c = [10].to_bytes()
+      end
+
+      if record_output
+        chan.send(c)
+      end
+
+      print c.to_string()
+
+      task::sleep(delay)
+    end
+  end, [cfg.clone(), io_chan])
+end
+
+fn help()
+  padlen = "            ".size()
+  padstart = "  "
+  opts = {
+    "-p":      "only the printable ASCII characters",
+    "-a":      "all ASCII characters",
+    "-0":      "include the null (0 byte) character",
+    "-l":      "generate random length lines (\\n terminated strings)",
+    "-f name": "record characters in file \"name\"",
+    "-d nnn":  "delay nnn milliseconds following each character",
+    "-r name": "replay characters in file \"name\" to output",
+    "-h":      "print this menu"
+  }
+
+  println string::padend("usage:", padlen) + padstart + "./fuzz.kiwi <option(s)>"
+  println "options:"
+  for k, v in opts do
+    println padstart + string::padend(k, padlen) + v
+  end
+  println ""
+end
+
+fn validate_config(cfg: hashmap)
+  valid_opts = ["p", "a", "0", "l", "f", "d", "r", "h"]
+  cfg.keys().each(with (opt) do
+    if not valid_opts.contains(opt)
+      throw "Invalid option `${opt}`"
+    end
+  end)
+end
+
+fn parse_args(args: list, value_opts: list = []): hashmap
+  cfg = {}
+  it = list::iterator(args)
+
+  while it.can_read() do
+    opt = it.consume()
+
+    if value_opts.contains(opt)
+      if not it.can_read()
+        throw "Expected a parameter value for option `${opt}`"
+      end
+
+      cfg[opt] = it.consume()
+    else
+      cfg[opt] = true
+    end
+  end
+
+  cfg
+end
+
+main(env::argv().keys())
