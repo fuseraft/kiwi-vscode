@@ -120,7 +120,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|break|catch|const|do|eprint|eprintln|emit|exit|export|finally|for|import|include|in|interface|def|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|when|while)\\b"
+					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|def|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|with|when|while)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -168,7 +168,7 @@
             "patterns": [
                 {
                     "name": "keyword.operator.kiwi",
-                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|:|::|\\.\\."
+                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|\\?\\?|:|::|\\.\\."
                 }
             ]
         }

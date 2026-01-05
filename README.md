@@ -1,10 +1,10 @@
-# Hayward and Kiwi Language Support for Visual Studio Code
+# Kiwi Language Support for Visual Studio Code
 
-This extension provides language support for the [Hayward Interpreter](https://www.github.com/fuseraft/hayward) and the [Kiwi Programming Language](https://www.github.com/fuseraft/kiwi). 🥝
+This extension provides language support for [The Kiwi Programming Language](https://www.github.com/fuseraft/kiwi). 🥝
 
 ## Features
 
-Syntax highlighting and code snippets for Hayward and Kiwi.
+Syntax highlighting and code snippets for Kiwi.
 
 ## Installation
 
@@ -12,7 +12,7 @@ This extension can be installed from the Visual Studio Code Marketplace or by im
 
 ## Usage
 
-Simply open your Kiwi files with a `.hayward` or `.kiwi` extension, and the extension will automatically provide syntax highlighting and code snippets.
+Simply open your Kiwi files with a `.kiwi` extension, and the extension will automatically provide syntax highlighting and code snippets.
 
 ## Contributing
 
