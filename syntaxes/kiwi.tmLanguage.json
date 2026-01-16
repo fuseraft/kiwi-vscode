@@ -28,6 +28,9 @@
 		},
         {
             "include": "#operators"
+        },
+        {
+            "include": "#punctuation"
         }
 	],
 	"repository": {
@@ -120,7 +123,7 @@
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|def|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|with|when|while)\\b"
+					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|with|when|while)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -168,7 +171,23 @@
             "patterns": [
                 {
                     "name": "keyword.operator.kiwi",
-                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*=|%=|%|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|\\?\\?|:|::|\\.\\."
+                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|\\|\\||!|\\+=|-=|\\*\\*|\\*\\*=|\\*=|%=|%|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|\\?\\?|:|::|\\.\\."
+                }
+            ]
+        },
+		"punctuation": {
+            "patterns": [
+                {
+                    "match": "[\\(\\)\\[\\]\\{\\}]",
+                    "name": "punctuation.section.kiwi"
+                },
+                {
+                    "match": "[,:]",
+                    "name": "punctuation.separator.kiwi"
+                },
+                {
+                    "match": "\\.",
+                    "name": "punctuation.accessor.kiwi"
                 }
             ]
         }
