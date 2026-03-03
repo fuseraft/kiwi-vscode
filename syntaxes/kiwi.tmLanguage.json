@@ -56,6 +56,14 @@
 					},
 					"patterns": [
 						{
+							"name": "keyword.other.documentation.kiwi",
+							"match": "@(summary|param|return|returns|throws|example|see|deprecated|author|version)\\b"
+						},
+						{
+							"name": "punctuation.definition.documentation.kiwi",
+							"match": "^\\s*---\\s*$"
+						},
+						{
 							"match": ".+?",
 							"name": "comment.content.kiwi"
 						}
