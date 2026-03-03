@@ -166,5 +166,33 @@
             "end"
         ],
         "description": "Creates a do block."
+    },
+    "Generator Function": {
+        "prefix": "generator",
+        "body": [
+            "fn $1($2)",
+            "  $3",
+            "  yield $0",
+            "end"
+        ],
+        "description": "Creates a generator function that yields values."
+    },
+    "Abstract Struct": {
+        "prefix": "abstractstruct",
+        "body": [
+            "abstract struct $1",
+            "  abstract fn $2($3)",
+            "end",
+            "",
+            "struct $4 < $1",
+            "  fn new()",
+            "    $0",
+            "  end",
+            "",
+            "  override fn $2($3)",
+            "  end",
+            "end"
+        ],
+        "description": "Creates an abstract struct and a concrete implementation."
     }
 }

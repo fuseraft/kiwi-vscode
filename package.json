@@ -2,7 +2,7 @@
   "name": "kiwi-lang",
   "displayName": "kiwi-lang",
   "description": "Syntax highlighting for The Kiwi programming language.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "fuseraft",
   "icon": "images/icon.png",
   "engines": {

@@ -118,12 +118,16 @@
 					"match": "(?<=\\s|^)@(?=\\s|$)"
 				},
 				{
+					"name": "variable.other.static.kiwi",
+					"match": "@@[a-zA-Z_][a-zA-Z0-9_]*"
+				},
+				{
 					"name": "variable.instance.kiwi",
 					"match": "@[a-zA-Z_][a-zA-Z0-9_]*"
 				},
 				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|return|static|struct|throw|to|try|var|with|when|while)\\b"
+					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|require|return|static|struct|throw|to|try|var|with|when|while|yield)\\b"
 				},
 				{
 					"name": "constant.language.boolean.kiwi",
@@ -139,7 +143,7 @@
 				},
 				{
 					"name": "storage.type.kiwi",
-					"match": "\\b(any|boolean|bytes|date|float|hashmap|integer|lambda|list|none|object|pointer|string)\\b"
+					"match": "\\b(any|boolean|bytes|date|float|generator|hashmap|integer|lambda|list|none|object|pointer|string)\\b"
 				}
 			]
 		},
@@ -147,7 +151,7 @@
             "patterns": [
                 {
                     "name": "keyword.function.kiwi",
-                    "match": "\\b(append|begins_with|between|chars|chomp|clear|clone|concat|contains|count|day|dequeue|empty|ends_with|enqueue|find|first|flatten|get|has_key|hour|index|insert|is_a|join|keys|last|lastindex|ltrim|lines|lowercase|match|matches|matches_all|members|merge|millisecond|minute|month|pop|pretty|push|remove|remove_at|replace|reverse|rtrim|rotate|rreplace|rsplit|scan|second|set|shift|size|slice|split|substring|swap|to_list|to_bytes|to_date|to_float|to_hex|to_integer|tokens|to_string|trim|truthy|type|unique|unshift|uppercase|values|year|zip)\\b"
+                    "match": "\\b(append|begins_with|between|chars|chomp|clear|clone|concat|contains|count|day|dequeue|empty|ends_with|enqueue|find|first|flatten|get|has_key|hex_bytes|hour|index|insert|is_a|join|keys|last|lastindex|ltrim|lines|lowercase|match|matches|matches_all|members|merge|millisecond|minute|month|ord|pop|pretty|push|remove|remove_at|replace|reverse|rtrim|rotate|rreplace|rsplit|scan|second|set|shift|size|slice|split|substring|swap|to_list|to_bytes|to_date|to_float|to_hex|to_integer|tokens|to_string|trim|truthy|type|unique|unshift|uppercase|values|year|zip)\\b"
 				}
             ]
         },
