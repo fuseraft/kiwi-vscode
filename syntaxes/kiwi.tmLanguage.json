@@ -11,9 +11,6 @@
 		{
 			"include": "#keywords"
 		},
-        {
-            "include": "#builtin-methods"
-        },
 		{
 			"include": "#number"
 		},
@@ -26,12 +23,12 @@
 		{
 			"include": "#hexadecimal"
 		},
-        {
-            "include": "#operators"
-        },
-        {
-            "include": "#punctuation"
-        }
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
+		}
 	],
 	"repository": {
 		"comments": {
@@ -138,6 +135,14 @@
 					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|require|return|static|struct|throw|to|try|var|with|when|while|yield)\\b"
 				},
 				{
+					"name": "storage.type.kiwi",
+					"match": "\\b(any|boolean|bytes|date|float|generator|hashmap|integer|lambda|list|none|object|pointer|string)\\b"
+				},
+				{
+					"name": "keyword.function.kiwi",
+					"match": "\\b(all|append|begins_with|between|call|chars|chomp|clear|clone|concat|contains|count|day|dequeue|each|empty|ends_with|enqueue|filter|find|first|flatten|get|has_key|hex_bytes|hour|index|insert|is_a|join|keys|last|lastindex|lines|lowercase|ltrim|map|match|matches|matches_all|max|members|merge|millisecond|min|minute|month|ord|parameters|pop|pretty|push|reduce|remove|remove_at|replace|returns|reverse|rotate|rreplace|rsplit|rtrim|scan|second|set|shift|size|skip|slice|sort|split|substring|sum|swap|take|to_bytes|to_date|to_float|to_hex|to_integer|to_lambda|to_list|to_string|tokens|trim|truthy|type|unique|unshift|uppercase|values|year|zip)\\b"
+				},
+				{
 					"name": "constant.language.boolean.kiwi",
 					"match": "\\b(true|false)\\b"
 				},
@@ -148,61 +153,49 @@
 				{
 					"name": "variable.other.kiwi",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
-				},
-				{
-					"name": "storage.type.kiwi",
-					"match": "\\b(any|boolean|bytes|date|float|generator|hashmap|integer|lambda|list|none|object|pointer|string)\\b"
 				}
 			]
 		},
-		"builtin-methods": {
-            "patterns": [
-                {
-                    "name": "keyword.function.kiwi",
-                    "match": "\\b(append|begins_with|between|chars|chomp|clear|clone|concat|contains|count|day|dequeue|empty|ends_with|enqueue|find|first|flatten|get|has_key|hex_bytes|hour|index|insert|is_a|join|keys|last|lastindex|ltrim|lines|lowercase|match|matches|matches_all|members|merge|millisecond|minute|month|ord|pop|pretty|push|remove|remove_at|replace|reverse|rtrim|rotate|rreplace|rsplit|scan|second|set|shift|size|slice|split|substring|swap|to_list|to_bytes|to_date|to_float|to_hex|to_integer|tokens|to_string|trim|truthy|type|unique|unshift|uppercase|values|year|zip)\\b"
-				}
-            ]
-        },
 		"number": {
 			"name": "constant.numeric.kiwi",
 			"match": "\\b-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+)?\\b"
 		},
-        "octal": {
-            "name": "constant.numeric.octal.kiwi",
-            "match": "\\b0o[0-7]+\\b"
-        },
-        "binary": {
-            "name": "constant.numeric.binary.kiwi",
-            "match": "\\b0b[01]+\\b"
-        },
+		"octal": {
+			"name": "constant.numeric.octal.kiwi",
+			"match": "\\b0o[0-7]+\\b"
+		},
+		"binary": {
+			"name": "constant.numeric.binary.kiwi",
+			"match": "\\b0b[01]+\\b"
+		},
 		"hexadecimal": {
 			"name": "constant.numeric.hexadecimal.kiwi",
 			"match": "\\b0x[0-9a-fA-F]+\\b"
 		},
-        "operators": {
-            "patterns": [
-                {
-                    "name": "keyword.operator.kiwi",
-                    "match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|and|or|not|\\|\\||!|\\+=|-=|\\*\\*|\\*\\*=|\\*=|%=|%|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|\\?\\?|:|::|\\.\\."
-                }
-            ]
-        },
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.kiwi",
+					"match": "\\+|-|\\*|\\/|=|==|!=|<|>|<=|>=|=<|&|\\||\\^|~|<<|>>|>>>|&&|and|or|not|\\|\\||!|\\+=|-=|\\*\\*|\\*\\*=|\\*=|%=|%|\\/=|&=|\\|=|\\^=|~=|<<=|>>=|&&=|\\|\\|=|\\?|\\?\\?|:|::|\\.\\."
+				}
+			]
+		},
 		"punctuation": {
-            "patterns": [
-                {
-                    "match": "[\\(\\)\\[\\]\\{\\}]",
-                    "name": "punctuation.section.kiwi"
-                },
-                {
-                    "match": "[,:]",
-                    "name": "punctuation.separator.kiwi"
-                },
-                {
-                    "match": "\\.",
-                    "name": "punctuation.accessor.kiwi"
-                }
-            ]
-        }
+			"patterns": [
+				{
+					"match": "[\\(\\)\\[\\]\\{\\}]",
+					"name": "punctuation.section.kiwi"
+				},
+				{
+					"match": "[,:]",
+					"name": "punctuation.separator.kiwi"
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.accessor.kiwi"
+				}
+			]
+		}
 	},
 	"scopeName": "source.kiwi"
 }
