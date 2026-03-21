@@ -68,6 +68,41 @@
 				}
 			]
 		},
+		"interpolation": {
+			"name": "meta.embedded.line.kiwi",
+			"begin": "\\$\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.begin.kiwi"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.end.kiwi"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#octal"
+				},
+				{
+					"include": "#binary"
+				},
+				{
+					"include": "#hexadecimal"
+				},
+				{
+					"include": "#operators"
+				}
+			]
+		},
 		"strings": {
 			"patterns": [
 				{
@@ -89,6 +124,9 @@
 						{
 							"name": "constant.character.escape.kiwi",
 							"match": "\\\\(?:[nrt\"\\\\]|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
+						},
+						{
+							"include": "#interpolation"
 						}
 					]
 				},
@@ -131,8 +169,56 @@
 					"match": "@[a-zA-Z_][a-zA-Z0-9_]*"
 				},
 				{
+					"comment": "Function definition — highlight name as entity",
+					"match": "\\b(fn|def)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.kiwi"
+						},
+						"2": {
+							"name": "entity.name.function.kiwi"
+						}
+					}
+				},
+				{
+					"comment": "Struct definition — highlight name as type entity",
+					"match": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.kiwi"
+						},
+						"2": {
+							"name": "entity.name.type.kiwi"
+						}
+					}
+				},
+				{
+					"comment": "Enum definition — highlight name as type entity",
+					"match": "\\b(enum)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.kiwi"
+						},
+						"2": {
+							"name": "entity.name.type.kiwi"
+						}
+					}
+				},
+				{
+					"comment": "Package definition — highlight name as namespace entity",
+					"match": "\\b(package)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.kiwi"
+						},
+						"2": {
+							"name": "entity.name.namespace.kiwi"
+						}
+					}
+				},
+				{
 					"name": "keyword.control.kiwi",
-					"match": "\\b(abstract|as|break|case|catch|const|def|do|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|require|return|static|struct|throw|to|try|var|with|when|while|yield)\\b"
+					"match": "\\b(abstract|as|break|case|catch|const|def|do|enum|eprint|eprintln|else|elsif|emit|end|exit|export|finally|for|if|import|include|in|interface|fn|package|next|off|on|once|override|eval|pass|print|println|printxy|private|repeat|require|return|static|struct|throw|to|try|var|with|when|while|yield)\\b"
 				},
 				{
 					"name": "storage.type.kiwi",

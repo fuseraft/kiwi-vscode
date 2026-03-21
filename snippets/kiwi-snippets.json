@@ -38,21 +38,32 @@
         ],
         "description": "Creates a new function definition."
     },
-    "Module Definition": {
+    "Package Definition": {
         "prefix": "package",
         "body": [
             "package $1",
-            "  $0",
-            "end"
+            "  fn $2($3)",
+            "    $0",
+            "  end",
+            "end",
+            "",
+            "export \"$1\""
         ],
-        "description": "Defines a new package."
+        "description": "Defines a new package with a function stub and export."
     },
-    "Import Module": {
+    "Import Package": {
         "prefix": "import",
         "body": [
-            "import \"@$1\" as $2"
+            "$1 = import \"$2\""
         ],
-        "description": "Imports a module and assigns it an alias."
+        "description": "Imports a package and assigns it an alias."
+    },
+    "Package Import": {
+        "prefix": "pkgimport",
+        "body": [
+            "import \"$1\""
+        ],
+        "description": "Activates a package for use with qualifier syntax (pkg::method)."
     },
     "Try-Catch Block": {
         "prefix": "trycatch",
@@ -135,7 +146,7 @@
         "description": "Creates an if-else statement."
     },
     "If-Elsif-Else Block": {
-        "prefix": "ifelse",
+        "prefix": "ifelseif",
         "body": [
             "if $1",
             "  $2",
@@ -194,5 +205,16 @@
             "end"
         ],
         "description": "Creates an abstract struct and a concrete implementation."
+    },
+    "Enum Definition": {
+        "prefix": "enum",
+        "body": [
+            "enum $1",
+            "  $2",
+            "  $3",
+            "  $0",
+            "end"
+        ],
+        "description": "Defines an enum with named constant members."
     }
 }
